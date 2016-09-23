@@ -1,0 +1,15 @@
+version: '2'
+services:
+  web:
+    build: .
+  lb:
+    image: dockercloud/haproxy
+    links:
+      - web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:80
+
+#docker-compose -f docker-compose.yml up
+#docker-compose -f .\docker-compose.yml scale web=2
