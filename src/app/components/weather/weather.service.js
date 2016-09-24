@@ -11,18 +11,13 @@
   //
   /** @ngInject */
   .value('exampleLocations',['Boston','San Francisco','Coimbatore','Seekonk','Bangalore','New York','Moscow','Mumbai'])
-  //
-  // Storm "Xaver" special locations
-  //
-  /** @ngInject */
-  .value('stormLocations',['Sylt','St. Peter-Ording','Husum','Bremerhaven','Hamburg','Kiel','Lübeck'])
 
     /** @ngInject */
     function openWeatherMap($resource)
     {
 
     // API key is currently unused (work either with or without key)
-    var apiKey = '279b4be6d54c8bf6ea9b12275a567156';
+    var apiKey = 'f4121c5e9105e23ecff0cdc7a0e3eede';
     var apiBaseUrl = 'http://api.openweathermap.org/data/2.5/';
 
     

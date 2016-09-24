@@ -43,7 +43,7 @@ app.get('/api/ip', function(req, res) {
             // use mongoose to get all nerds in the database        
            require('dns').lookup(require('os').hostname(), function (err, add, fam) {
                // var ip = "{'ip':'"+ add +"'}";
-                console.log('return IP address' + add);
+                console.log('return IP address: ' + add);
                 res.json(add); 
             })
         });
@@ -53,7 +53,7 @@ app.listen(port,function() {
         console.log('Server listening on port ' + port);
         require('dns').lookup(require('os').hostname(), function (err, add, fam) {
                // var ip = "{'ip':'"+ add +"'}";
-                console.log('return IP address' + add);
+                console.log('return IP address: ' + add);
             })
         });               
 

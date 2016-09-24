@@ -1,2 +1,1 @@
-# ngWeatherApp
-Scalable Weather App
+#Scalable AngularJS App using Docker Compose

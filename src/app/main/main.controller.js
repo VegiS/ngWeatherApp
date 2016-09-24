@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($http,$timeout, toastr,openWeatherMap,exampleLocations,stormLocations,ISO3166,ipService) {
+  function MainController($http,$timeout, toastr,openWeatherMap,exampleLocations,ISO3166,ipService) {
     var vm = this;
 
     vm.message = '';
@@ -14,7 +14,7 @@
 
     // Expose example locations to vm
     vm.exampleLocations = exampleLocations;
-    vm.stormLocations = stormLocations;
+    //vm.stormLocations = stormLocations;
     vm.iconBaseUrl = 'http://openweathermap.org/img/w/';
 
     // On initialization load data for first example entry
