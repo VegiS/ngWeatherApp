@@ -12,7 +12,7 @@ WORKDIR /usr/src/app
 
 #First install the required packages
 COPY ./package.json /usr/src/app
-RUN npm install --only=production
+RUN npm install
 
 #Then copy all the source code
 COPY ./dist /usr/src/app/dist
@@ -24,4 +24,4 @@ CMD ["npm","start"]
 
 
 #docker build -t ngweatherapp:0.1 .
-#docker run -d -p 80:8080 ngweatherapp:0.1
+#docker run -d -p 80:80 ngweatherapp:0.1
