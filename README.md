@@ -13,15 +13,19 @@ Technologies and Frameworks
     - Docker Compose
     - HA proxy for load balancing
 
-- Production Environment
-    - GitHub
+- Continous Integration (CI/CD)
     - Docker Cloud
-        - Docker Cloud Service
+    - Docker Cloud Service
+    - Github Web hooks
+    - Azure/AWS
+    - UAT
+
+- Production
+    - Docker Cloud
         - Docker Cloud Stack
         - HA proxy
         - Azure
-    - Continous Integration
-        - GitHub + Docker Cloud
+
 
 #Overview:
 This project is to demonstrate how to acheive scaling of dockerized NodeJS apps using HAProxy hosted in local Docker environment and Docker cloud (formerly called as Tutum). The application is a Weather App built using AngularJS and used OpenWeather Api to retreive weather data. Continous Integration/Continous Deployment is acheived through combination of Github and Docker Cloud Build automation functionalites.
@@ -65,11 +69,54 @@ npm start
 
 ```
 
-## 2. Development:
+## 2. Development Environment:
 
- 
+Install (NodeJS)[https://nodejs.org/en/] and (docker)[https://docs.docker.com/engine/installation/#installation]. 
+Now use the (docker file)[https://github.com/spbreed/ngWeatherApp/blob/master/Dockerfile] to run the project.
 
 
+```
+docker build -t ngweatherapp:0.1 .
+docker run -d -p 80:80 ngweatherapp:0.1
+
+```
+
+Navigate to http://localhost/ to view the site. Docker team released a new GUI - [Kitematic](https://kitematic.com/) to manage docker containers on OSX and Windows. Open Kitematic to view all the end points, start/stop containers etc.
+
+(Docker Compose)[https://docs.docker.com/compose/]is a tool for defining and running multi-container Docker applications. With Compose, you use a Compose file to integrate all the services including network connections, port settings etc. Then, using a single command, you create and start all the services from your configuration.
+
+Included [docker compose file](https://github.com/spbreed/ngWeatherApp/blob/master/docker-compose.yml) shows how to use [HAProxy](http://www.haproxy.org/#desc), an open source load balancer for TCP/HTTP based websites.
+This project uses [haproxy image](https://github.com/docker/dockercloud-haproxy) from docker cloud, that balances between linked containers and, if launched in Docker Cloud or using Docker Compose v2, reconfigures itself when a linked cluster member redeploys, joins or leaves.
+
+```
+  lb:
+    image: dockercloud/haproxy
+    links:
+      - web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:80
+```
+
+Now run docker-compose 'up' command to build the application stack based on the compose file
+
+```
+docker-compose -f docker-compose.yml up
+```
+
+Now web layer within the compose file can be scaled and load balanced with the below command
+
+```
+docker-compose -f .\docker-compose.yml scale web=3
+```
+
+Now http://localhost will be a load balanced URL and IP address in the header will change with every request.
 
     
+## 3. Continous Integration/Continous Development (CI/CD):
+
+
+
+
 
