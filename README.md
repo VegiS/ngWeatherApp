@@ -116,7 +116,44 @@ Now http://localhost will be a load balanced URL and IP address in the header wi
     
 ## 3. Continous Integration/Continous Development (CI/CD):
 
+Signup for [docker cloud](https://cloud.docker.com/) and [github](https://github.com) and create a repo on each.
 
+Now push your code to github repo
+
+```
+git init
+git add -A 
+git commit -m 'Initial Commit'
+git push
+
+```
+
+Push your docker image to docker cloud
+
+```
+docker tag ngweatherapp:0.1 spbreed/ngweatherapp:0.1
+docker push spbreed/ngweatherapp:0.1
+
+```
+spbreed/ngweatherapp is the repo created in docker cloud. 
+![](https://github.com/spbreed/ngweatherapp/images/docker_repo.png)
+
+Now navigate to the docker repo and click 'Launch Service' -> General settings -> Enable Auto redeploy -> Create and Deploy.
+
+Once the service is launched, click 'Services' on the left navigation to view the newly launched service. Under Endpoints copy the container endpoints and paste in the browser. This will launch the website.
+
+##CI
+
+Modern CI pipelines (Jenkins, CircleCI, TravisCI etc) uses [Webhooks](https://developer.github.com/webhooks/) functionalities in Git based source repos to retreive the latest source code and execute the build with each git push.
+
+Docker cloud implements a CI pipeline as well. Autobuild process in Docker repo triggers a new build with every git push to your source code repository.
+
+Click Cloud settings in left navigation -> source providers -> Github and connect to your Github account. 
+
+Now connect your Github repo to Docker cloud repo
+Click Repository -> ngweatherapp -> builds -> Configure Automated builds -> Select your Github repo -> Save and build
+
+Now with each Push, the build process will triggered and latest container will be published. (Auto redeploy should be enabled on the service)
 
 
 
