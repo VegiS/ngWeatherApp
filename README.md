@@ -28,7 +28,7 @@ Technologies and Frameworks
 
 
 #Overview:
-This project is to demonstrate how to acheive scaling of dockerized NodeJS apps using HAProxy hosted in local Docker environment and Docker cloud (formerly called as Tutum). The application is a Weather App built using AngularJS and used OpenWeather Api to retreive weather data. Continous Integration/Continous Deployment is acheived through combination of Github and Docker Cloud Build automation functionalites.
+This project is to demonstrate how to acheive scaling of dockerized NodeJS apps using HAProxy hosted in local Docker environment and Docker cloud (formerly called as Tutum). The application is a Weather App built using AngularJS and used OpenWeather Api to retreive weather data. Continous Integration/Continous Deployment is acheived through combination of Github and Docker Cloud Build automation functionalites. 
 
 ## 1. Front End:
 This project uses [gulp angular generator](https://github.com/Swiip/generator-gulp-angular) open source Yeomen library to build AngularJS based NodeJS application. FountainJS takes care of wiring AngularJS, NodeJS, Gulp, Webpack, ESLink, Karma, BrowserSync etc during start of the project. There are few other generators out there like [mean.io](http://mean.io/), [mean.js](mean.js), which are pretty robust and provides default MongoDB integration. This project deals only with scaling front end and hence gulp angular generator is used throughout this project. 
@@ -118,7 +118,7 @@ Now http://localhost will be a load balanced URL and IP address in the header wi
 
 Signup for [docker cloud](https://cloud.docker.com/) and [github](https://github.com) and create a repo on each.
 
-[Link your Azure Subscription]((https://docs.docker.com/docker-cloud/infrastructure/link-azure/)) and [create a basic A0 instance](https://docs.docker.com/docker-cloud/getting-started/your_first_node/) to host your containers in Azure.
+[Link your Azure Subscription]((https://docs.docker.com/docker-cloud/infrastructure/link-azure/)) and [create a basic A0 instance](https://docs.docker.com/docker-cloud/getting-started/your_first_node/) to host your containers in Azure. At this point Docker cloud creates a linux instance on Azure. [With Microsoft announcing support for docker containers](https://www.docker.com/microsoft) on their win 2016 servers, soon the integration should work with windows servers as well.
 
 Now push your code to github repo
 
