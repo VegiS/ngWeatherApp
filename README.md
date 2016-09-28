@@ -164,5 +164,22 @@ Click Repository -> ngweatherapp -> builds -> Configure Automated builds -> Sele
 
 Now with each Push, the build process will triggered and latest container will be published. (Auto redeploy should be enabled on the service)
 
+## 4. Production Deployment:
 
+[Docker stack](https://docs.docker.com/docker-cloud/apps/stacks/) functionality in docker cloud is used to bundle docker services and a convenient way to deploy multiple services that are linked to each other, without needing to define each one separately.
 
+Now click -> Stacks -> Create and add the docker compose file. 
+
+![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_stack.png)
+
+Now scale the web servers with 'target_num_containers: 4' tag
+
+![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_compose.png)
+
+Now copy the URL from ebdpoint section of the 'stack'
+
+![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_lb.png)
+
+Launch the URL with multiple browers to confirm the scaling and loadbalancing.
+
+![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_web.png)
