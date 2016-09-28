@@ -139,15 +139,15 @@ docker push spbreed/ngweatherapp:0.1
 ```
 spbreed/ngweatherapp is the repo created in docker cloud. 
 
-![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_repo.png)
+![](https://github.com/spbreed/ngWeatherApp/master/images/docker_repo.png)
 
 Now navigate to the docker repo and click 'Launch Service' -> General settings -> Enable Auto redeploy -> Create and Deploy.
 
-![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_launchservice.png)
+![](https://github.com/spbreed/ngWeatherApp/master/images/docker_launchservice.png)
 
 Once the service is launched, click 'Services' on the left navigation to view the newly launched service. Under Endpoints copy the container endpoints and paste in the browser. This will launch the website.
 
-![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_service_endpoint.png)
+![](https://github.com/spbreed/ngWeatherApp/master/images/docker_service_endpoint.png)
 
 ##CI
 
@@ -157,12 +157,12 @@ Docker cloud implements a CI pipeline as well. Autobuild process in Docker repo 
 
 Click Cloud settings in left navigation -> source providers -> Github and connect to your Github account. 
 
-![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_git.png)
+![](https://github.com/spbreed/ngWeatherApp/master/images/docker_git.png)
 
 Now connect your Github repo to Docker cloud repo
 Click Repository -> ngweatherapp -> builds -> Configure Automated builds -> Select your Github repo -> Save and build
 
-![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_autobuild.png)
+![](https://github.com/spbreed/ngWeatherApp/master/images/docker_autobuild.png)
 
 Now with each Push, the build process will triggered and latest container will be published. (Auto redeploy should be enabled on the service)
 
@@ -172,19 +172,19 @@ Now with each Push, the build process will triggered and latest container will b
 
 Now click -> Stacks -> Create and add the docker compose file. 
 
-![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_stack.png)
+![](https://github.com/spbreed/ngWeatherApp/master/images/docker_stack.png)
 
 Now scale the web servers with 'target_num_containers: 4' tag
 
-![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_compose.png)
+![](https://github.com/spbreed/ngWeatherApp/master/images/docker_compose.png)
 
 Now copy the URL from endpoint section of the 'stack'
 
-![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_lb.png)
+![](https://github.com/spbreed/ngWeatherApp/master/images/docker_lb.png)
 
 Launch the URL with multiple browers to confirm the scaling and loadbalancing.
 
-![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_web.png)
+![](https://github.com/spbreed/ngWeatherApp/master/images/docker_web.png)
 
 # Next steps
  - Use Docker orchestration tools like docker swarm or kubernetes to deploy containers across node clusters.
