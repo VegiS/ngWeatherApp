@@ -1,4 +1,4 @@
-#Scalable AngularJS + NodeJS web apps using #DockerCloud and #DockerCompose
+#Scalable AngularJS + NodeJS #microservices using #DockerCloud and #DockerCompose
 
 Technologies and Frameworks
 - Front End
@@ -118,6 +118,8 @@ Now http://localhost will be a load balanced URL and IP address in the header wi
 
 Signup for [docker cloud](https://cloud.docker.com/) and [github](https://github.com) and create a repo on each.
 
+[Link your Azure Subscription]((https://docs.docker.com/docker-cloud/infrastructure/link-azure/)) and [create a basic A0 instance](https://docs.docker.com/docker-cloud/getting-started/your_first_node/) to host your containers in Azure.
+
 Now push your code to github repo
 
 ```
@@ -166,7 +168,7 @@ Now with each Push, the build process will triggered and latest container will b
 
 ## 4. Production Deployment:
 
-[Docker stack](https://docs.docker.com/docker-cloud/apps/stacks/) functionality in docker cloud is used to bundle docker services and a convenient way to deploy multiple services that are linked to each other, without needing to define each one separately.
+[Docker stack](https://docs.docker.com/docker-cloud/apps/stacks/) functionality in docker cloud is used to bundle docker services and a convenient way to deploy multiple services that are linked to each other, without needing to define each one separately. 
 
 Now click -> Stacks -> Create and add the docker compose file. 
 
@@ -176,10 +178,13 @@ Now scale the web servers with 'target_num_containers: 4' tag
 
 ![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_compose.png)
 
-Now copy the URL from ebdpoint section of the 'stack'
+Now copy the URL from endpoint section of the 'stack'
 
 ![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_lb.png)
 
 Launch the URL with multiple browers to confirm the scaling and loadbalancing.
 
 ![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_web.png)
+
+# Next steps
+ - Use Docker orchestration tools like docker swarm or kubernetes to deploy containers across node clusters.
