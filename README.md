@@ -1,29 +1,29 @@
 > Overview:
 This project is to demonstrate how to acheive scaling of dockerized NodeJS apps using HAProxy hosted in local Docker environment and Docker cloud (formerly called as Tutum). The application is a Weather App built using AngularJS and used OpenWeather Api to retreive weather data. Continous Integration/Continous Deployment is acheived through combination of Github and Docker Cloud Build automation functionalites.
 
-> Source code: https://github.com/spbreed/ngWeatherApp/
+## Source code: [https://github.com/spbreed/ngWeatherApp/](https://github.com/spbreed/ngWeatherApp/)
 
-## Technologies and Frameworks
-# Front End
+# Technologies and Frameworks
+## Front End
 - AngularJS + NodeJS Yeoman templates using FountainIO
 - Gulp for build and source distribution
 - OpenWeather API for backend
 - ExpressJS for serving webpages and server side API
 
-# Dev Environment
+## Dev Environment
 - NodeJS on Windows 10
 - Docker on Windows
 - Docker Compose
 - HA proxy for load balancing
 
-# Continous Integration (CI/CD)
+## Continous Integration (CI/CD)
 - Docker Cloud
 - Docker Cloud Service
 - Github Web hooks
 - Azure/AWS
 - UAT
 
-# Production
+## Production
 - Docker Cloud
 - Docker Cloud Stack
 - HA proxy
