@@ -136,7 +136,7 @@ docker push spbreed/ngweatherapp:0.1
 
 ```
 spbreed/ngweatherapp is the repo created in docker cloud. 
-![](https://github.com/spbreed/ngweatherapp/images/docker_repo.png)
+![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_repo.png)
 
 Now navigate to the docker repo and click 'Launch Service' -> General settings -> Enable Auto redeploy -> Create and Deploy.
 
