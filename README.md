@@ -136,11 +136,16 @@ docker push spbreed/ngweatherapp:0.1
 
 ```
 spbreed/ngweatherapp is the repo created in docker cloud. 
+
 ![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_repo.png)
 
 Now navigate to the docker repo and click 'Launch Service' -> General settings -> Enable Auto redeploy -> Create and Deploy.
 
+![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_launchservice.png)
+
 Once the service is launched, click 'Services' on the left navigation to view the newly launched service. Under Endpoints copy the container endpoints and paste in the browser. This will launch the website.
+
+![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_service_endpoint.png)
 
 ##CI
 
@@ -150,8 +155,12 @@ Docker cloud implements a CI pipeline as well. Autobuild process in Docker repo 
 
 Click Cloud settings in left navigation -> source providers -> Github and connect to your Github account. 
 
+![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_git.png)
+
 Now connect your Github repo to Docker cloud repo
 Click Repository -> ngweatherapp -> builds -> Configure Automated builds -> Select your Github repo -> Save and build
+
+![](https://github.com/spbreed/ngWeatherApp/blob/master/images/docker_autobuild.png)
 
 Now with each Push, the build process will triggered and latest container will be published. (Auto redeploy should be enabled on the service)
 
